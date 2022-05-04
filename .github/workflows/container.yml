@@ -16,6 +16,6 @@ jobs:
         run: |
           cd ${{ env.working-directory}} 
           rm -rf node_modules package-lock.json
-          npm install && npm audit fix
+          npm install
           npm run build
           aws s3 cp /dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest     
